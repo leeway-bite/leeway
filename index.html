@@ -1,115 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Planner</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #f6f2e7;
-            color: #333;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: #fdfbf6;
-            padding: 20px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-style: italic;
-        }
-        .date-section input {
-            border: none;
-            border-bottom: 1px solid #aaa;
-            background: transparent;
-            font-size: 16px;
-            margin: 0 10px;
-            width: 100px;
-            text-align: center;
-        }
-        .planner-section {
-            display: flex;
-            justify-content: space-between;
-            text-align: left;
-        }
-        .schedule, .tasks {
-            width: 48%;
-        }
-        .schedule div, .tasks div {
-            padding: 5px;
-            border-bottom: 1px solid #ddd;
-        }
-        .tasks input[type="text"] {
-            margin-right: 10px;
-        }
-        .checklists-confirmation {
-            margin-top: 10px;
-        }
-        .footer-buttons {
-            margin-top: 20px;
-        }
-        .footer-buttons button {
-            border: none;
-            background: none;
-            font-size: 14px;
-            margin: 5px;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <!-- Critical Mobile Viewport Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Disable auto-formatting for telephone numbers -->
+  <meta name="format-detection" content="telephone=no">
+  <title>ChatGPT Mobile</title>
+  <style>
+    /* Mobile-First CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent; /* Removes touch highlight */
+    }
+    
+    body {
+      background: linear-gradient(to right, #00a67e, #008080);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #fff;
+      touch-action: manipulation; /* Optimizes touch delays */
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    
+    button {
+      background-color: #ffffff;
+      color: #00a67e;
+      border: none;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    button:active {
+      background-color: #00d6a3;
+      color: #fff;
+      transform: scale(0.98); /* Tactile feedback */
+    }
+    
+    /* Prevent zooming on input focus */
+    @media screen and (max-width: 480px) {
+      input, textarea, select {
+        font-size: 16px !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Daily Planner</h1>
-        <div class="date-section">
-            <input type="text" placeholder="Day"> /
-            <input type="text" placeholder="Month"> /
-            <input type="text" placeholder="Year">
-        </div>
-        <div class="planner-section">
-            <div class="schedule">
-                <h3>Today's Schedule</h3>
-                <div>05:00 <input type="text" placeholder="Task"></div>
-                <div>06:00 <input type="text" placeholder="Task"></div>
-                <div>07:00 <input type="text" placeholder="Task"></div>
-                <div>08:00 <input type="text" placeholder="Task"></div>
-                <div>09:00 <input type="text" placeholder="Task"></div>
-                <div>10:00 <input type="text" placeholder="Task"></div>
-                <div>11:00 <input type="text" placeholder="Task"></div>
-                <div>12:00 <input type="text" placeholder="Task"></div>
-                <div>01:00 <input type="text" placeholder="task"></div>
-                <div>02:00 <input type="text" placeholder="task"></div>
-                <div>03:00 <input type="text" placeholder="task"></div>
-              <div>04:00 <input type="text" placeholder="task"></div>
-              <div>05:00 <input type="text" placeholder="task"></div>
-              <div>06:00 <input type="text" placeholder="task"></div>
-              <div>07:00 <input type="text" placeholder="task"></div>
-              <div>08:00 <input type="text" placeholder="task"></div>
-              <div>09:00 <input type="text" placeholder="task"></div>
-            </div>
-            <div class="tasks">
-                <h3>Top Priorities of the Day</h3>
-                <div>Task 1 <input type="text"> </div>
-                <div>Task 2 <input type="text"></div>
-                <div>Task 3 <input type="text"></div>
-    
-                <h3>Checklists comfirmation</h3>
-                <div class="water-intake">
-                    <input type="checkbox"> 1
-                    <input type="checkbox"> 2
-                    <input type="checkbox"> 3
-                </div>
-                <h3>Checklists</h3>
-                <div>Check 1 <input type="text"> </div>
-                <div>Check 2 <input type="text"> </div>
-                <div>Check 3 <input type="text"> </div>
-                <h3>WORK REPORT</h3>
-                <input type="text" placeholder="One thing that made you happy today">
-        </div>
+  <h1>Smart Chat</h1>
+  <p>Tap below to start chatting with ChatGPT</p>
 
-    </div>
+  <button onclick="openChatGPT()">Start Chatting</button>
+
+  <script>
+    // Mobile-optimized click handler
+    function openChatGPT() {
+      // Uses '_self' instead of '_blank' for better mobile behavior
+      window.location.href = 'https://chat.openai.com/';
+    }
+    
+    // Prevent accidental zooming on double-tap
+    document.addEventListener('dblclick', function(e) {
+      e.preventDefault();
+    }, { passive: false });
+  </script>
 </body>
 </html>
-
